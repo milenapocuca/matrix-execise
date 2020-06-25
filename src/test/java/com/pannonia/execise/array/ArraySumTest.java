@@ -1,6 +1,7 @@
 package com.pannonia.execise.array;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.catchThrowable;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -35,6 +36,54 @@ public class ArraySumTest {
 
     // THEN
     assertThat(sum).isEqualTo(15);
+  }
+
+  /**
+   * <b>GIVEN</b> array is null</br>
+   * <b>WHEN</b> sum is calculated</br>
+   * <b>THEN</b> {@link IllegalArgumentException} is thrown with appropriate
+   * message </br>
+   */
+  @Test
+  @Disabled // TODO remove @Disabled annotation in order to enable the test
+  public void testNullInput() {
+
+    // GIVEN
+    Integer[] numbers = null;
+
+    // WHEN
+    Throwable thrown = catchThrowable(() -> {//
+      arraySum.sum(numbers);
+    });
+
+    // THEN
+    assertThat(thrown)//
+        .isInstanceOf(IllegalArgumentException.class)//
+        .hasMessageContaining("array is null");
+  }
+
+  /**
+   * <b>GIVEN</b> array contains multiple values including highest integer number</br>
+   * <b>WHEN</b> sum is calculated</br>
+   * <b>THEN</b> {@link IllegalArgumentException} is thrown with appropriate
+   * message </br>
+   */
+  @Test
+  @Disabled // TODO remove @Disabled annotation in order to enable the test
+  public void testMaxValue() {
+
+    // GIVEN
+    Integer[] numbers = new Integer[] { 1, 2, Integer.MAX_VALUE };
+
+    // WHEN
+    Throwable thrown = catchThrowable(() -> {//
+      arraySum.sum(numbers);
+    });
+
+    // THEN
+    assertThat(thrown)//
+        .isInstanceOf(IllegalArgumentException.class)//
+        .hasMessageContaining("could not calculate the sum, numbers are too high");
   }
 
   @AfterEach
