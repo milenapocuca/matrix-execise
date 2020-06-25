@@ -1,0 +1,109 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.pannonia.exercise</groupId>
+  <artifactId>matrix-exercise</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <version.java>8</version.java>
+    <version.java.javadoc>8</version.java.javadoc>
+
+    <!-- plugin -->
+    <version.maven.compiler>3.8.1</version.maven.compiler>
+
+    <!-- compile dependencies -->
+    <version.slf4j>2.0.0-alpha1</version.slf4j>
+
+    <!-- test dependencies -->
+    <version.assertj>3.16.1</version.assertj>
+    <version.junit.jupiter>5.4.2</version.junit.jupiter>
+    <version.junit.junit4>4.12</version.junit.junit4>
+    <version.mockito>3.3.3</version.mockito>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>Pannonia-expertise</name>
+      <distribution>repo</distribution>
+      <comments>
+      Copyright (C) 2020-2020 Pannonia-expertise d.o.o. All rights reserved.
+      This software is the proprietary information of Pannonia-expertise d.o.o.
+      Use is subject to license and non-disclosure terms.
+      </comments>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${version.assertj}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${version.junit.junit4}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <version>${version.junit.jupiter}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-params</artifactId>
+      <version>${version.junit.jupiter}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>${version.junit.jupiter}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-junit-jupiter</artifactId>
+      <version>${version.mockito}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${version.mockito}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>${version.slf4j}</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${version.maven.compiler}</version>
+        <configuration>
+          <source>${version.java}</source>
+          <target>${version.java}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
